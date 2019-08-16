@@ -66,6 +66,8 @@ $XX [[[this is string.value %$11]]] //$XX="this is string. value 4"
 MRK #xx //:same mean the "<<< #xx"
 >>> #xx //:jump to #xx.
 >>> //:jump for back. after calculated for the full address.
+IFJ X #1 //:if(X) jump to #1
+IFJ 1 #1 //:same mean the ">>> #1"
 
 //drawing
 X00 //:main layer, default back color #000 //background black, font color white
