@@ -1,9 +1,10 @@
-### MaDaM history
+### MaDaM
 ```
+//history
 v0.001 draft
 v0.010 address jump <--- now
 ```
-### MaDaM quick
+### outer quick
 ```
 //pug
 script(src="https://gnjo.github.io/MaDaM/mdm.js")
@@ -34,7 +35,7 @@ let fps=20,lps=200
 mdm.run(macro,fps,lps)
 ```
 
-### MaDaM cmd
+### outer cmd
 ```
 //command help
 MAN C //:C is command.
@@ -200,7 +201,7 @@ $KL 37 //arrow left
 $KR 39 //arrow right
 ```
 
-### MaDaM method
+### inner method
 ```
 //cmd definition
 mdm.def(cmd,fn,man) //definition. man set the text for command help.
@@ -229,7 +230,7 @@ mdm.fn.xxx //useful functions
 mdm.is.xxx //is check
 mdm.re.xxx //regex
 ```
-### MaDaM block order
+### inner block order
 ```
 mdm.md.readblock=0
 mdm.md.keyblock=0
