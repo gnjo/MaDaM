@@ -38,7 +38,7 @@ TXT [[[thi is quick wrap order.]]] X00
 ```
 TXT {{{1+2+3}}} X00 //disp the 6
 ```
-#always return value the $00
+# always return value the $00
 ```
 $11 xyz//$11 xyz
 //$00 xyz
@@ -55,7 +55,7 @@ TXT $00 X00//xyz
 IFJ 1 >>> TXT true X00 >>>
 ```
 
-$always last key the $$0, prev the $$1
+# always last key the $$0, prev the $$1
 ```
 $$0 //last keypress value
 $$1 //pre keypress value
