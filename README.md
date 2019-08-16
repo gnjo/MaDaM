@@ -181,3 +181,16 @@ mdm.cmd(cmd,fn) //definition
 mdm.cmd(cmd,ary) //done
 ```
 
+# MaDam sequence the inner
+```
+css setting
+key setting
+element setting
+macro lex
+drawloop on fps
+macroloop on lps
+
+and finally
+read on the macro
+```
+
