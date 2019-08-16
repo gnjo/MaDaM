@@ -69,6 +69,10 @@ MRK #xx //:same mean the "<<< #xx"
 IFJ X #1 //:if(X) jump to #1
 IFJ 1 #1 //:same mean the ">>> #1"
 
+//quick jump back
+IFJ 1 >>> TXT quick X00 >>>
+$$0=A >>> TXT A_pressed X00 >>>
+
 //drawing
 X00 //:main layer, default back color #000 //background black, font color white
 X01...X09 //:sub layers, default back color #0000 //transparent
