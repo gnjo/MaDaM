@@ -91,7 +91,8 @@ other layer X01...XZZ
 X00 0 0 0 640 480 #000
 X01 100 100 100 200 200 yellow
 DEL X01 //canable the detele X01 layer.
-DEL X00 //dont delete
-CLR X00
+DEL X00 //dont delete.
+DEL //all layer delete, exception the X00.
+CLR //all layer IMG TXT clear.
 ```
 
