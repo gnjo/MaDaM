@@ -35,6 +35,9 @@ mdm.run(macro,fps,lps)
 
 ### MaDaM cmd
 ```
+//command help
+MAN C //:C is command.
+MAN //:all command help
 //valiable
 $00 //:special. always return value.
 $$0 //:special. always pressed key.
@@ -184,8 +187,10 @@ $$0=B >>> $$1=A #1 >>> //A pressed B
 ### MaDaM method
 ```
 //cmd definition
-mdm.def(cmd,fn) //definition
+mdm.def(cmd,fn,man) //definition. man is command hint text.
 mdm.cmd(cmd,ary) //done
+
+mdm.man(cmd) //command help to return value.
 
 //sequence the inner
 mdm.run(str,fps,lps)
@@ -203,6 +208,7 @@ mdm.red() //read the macro on the lineloop
 mdm.sd.xxx //macro valiable set here. like a savedata.
 mdm.db.xxx //macro const data set here. like a database.
 mdm.md.xxx //madam system valiable set here. fps, lps, looptick, like a madam-data.
+mdm.md.man //command help
 mdm.fn.xxx //useful functions
 mdm.is.xxx //is check
 mdm.re.xxx //regex
