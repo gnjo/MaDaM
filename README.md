@@ -229,3 +229,21 @@ mdm.fn.xxx //useful functions
 mdm.is.xxx //is check
 mdm.re.xxx //regex
 ```
+### MaDaM block order
+```
+mdm.md.readblock=0
+mdm.md.keyblock=0
+
+mdm.lop=()=>{
+ if(mdm.md.readblock)return mdm;
+}
+...onkeydown=()=>{
+ if(mdm.md.keyblock)return;
+}
+mdm.def('SLP',(frame)=>{
+ mdm.md.readblock=mdm.md.keyblock=1;
+ let ms=(frame||1)*1000/mdm.md.fps
+ setTimeout(()=>{ mdm.md.readblock=mdm.md.keyblock=0 },ms)
+},'')
+```
+
