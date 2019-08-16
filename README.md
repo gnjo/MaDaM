@@ -17,8 +17,6 @@ MDM.q=(query)=>{
 }
 
 MDM.run(str,fps,lps)
-
-
 ```
 
 # one order
