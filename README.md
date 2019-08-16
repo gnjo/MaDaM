@@ -94,18 +94,21 @@ CLR X //:text and image clear and set font color white. X is layer.
 X00 //:same mean "CLR X"
 CLR //:all layer clear
 
-//drawing and apply
-YON T F X //:ask Yes Or No. T is 3line strings. F is 0 or 1. X is layer. blocking. return 0 or 1. yes is 1.
-//T is three lines string, qestion\nyes\nno.
-SEL T N X //:like a YON, but any select. N is select number. blocking. return selected number. cancel is void 0.
-$00?#1 //:if cancel, jump to #1
 ```
 
 ```
 //examples valiable
 
 ```
+
 ```
 //examples drawing
+//drawing and apply
+YON T F X //:ask Yes Or No. T is 3line strings. F is 0 or 1. X is layer. blocking.
+//return 0 or 1. yes is 1.
+//T is three lines string, qestion\nyes\nno.
 
+SEL T N X //:like a YON, but any select. N is select number. blocking.
+//return selected number. cancel is void 0.
+$00?#1 //:if cancel, jump to #1
 ```
