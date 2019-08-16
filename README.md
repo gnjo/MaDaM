@@ -176,8 +176,7 @@ $$0=B >>> $$1=A #1 >>> //A pressed B
 
 # MaDaM cmd definition 
 ```js
-mdm.cmd(cmd,fn) //definition
-
+mdm.def(cmd,fn) //definition
 mdm.cmd(cmd,ary) //done
 ```
 
