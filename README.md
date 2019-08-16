@@ -1,6 +1,7 @@
 ### MaDaM history
 ```
 v0.001 draft
+v0.010 address jump <--- now
 ```
 ### MaDaM quick
 ```
