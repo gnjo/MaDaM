@@ -163,6 +163,9 @@ MRK #2
 ```
 //examples drawing
 //drawing and apply
+SAY T X//:simple three line message. non blocking.
+KEY *//:key wait for blocking
+
 YON T F X //:ask Yes Or No. T is 3line strings. F is 0 or 1. X is layer. blocking.
 //return 0 or 1. yes is 1.
 //T is three lines string, qestion\nyes\nno.
