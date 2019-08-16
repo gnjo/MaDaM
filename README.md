@@ -51,9 +51,14 @@ $11+... //:+ - %
 ... //:body
 ]]] //:end
 
+/* //:multi comment start
+... commentout multi line
+*/ //:end
+
 //one line wrap order
 $XX {{{1+3}}}//same mean $11=eval(1+3)
 $XX [[[this is string.value %$11]]] //$XX="this is string. value 4"
+//<--- single comment out 
 
 //address and jump
 @xx //:set the main address. head the @. one macro, one @.
