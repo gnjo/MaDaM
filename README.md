@@ -39,39 +39,21 @@ $11 $00//:$11=$00
 $11 //:reset $11=void 0
 
 //valiable math hand
-//compare
-$00?#1 //:exist check. if($00) jump to #1
-$00!#1 //:void check. if(!$00) jump to #1
-$00=V #1//:equal check. if($00===V) jump to #1
-$00<V #1 //:if smaller than V, jump to #1
-$00>V #1 //:if bigger than V, jump to #1
-//mathmatics
-$11+V //:$11+=V
-$11-V //:$11-=V
-$11%V //:modulo always positive valiable. $11=Math.abs($11%V)
+$00?... //:? ! = < >
+$11+... //:+ - %
 
 //wrap order. wrap order canable the multi line.
-{{{
- console.log('x')
- //wrap order for javascript
- //javascript direct on MaDaM 
-}}}
-[[[
-line1 wrap order for multi string 
-line2 this value input to $00
-line3
-]]]
-$00//line1 ...line2... line3
-$11 xyz
-[[[
-valiable injection %$xx
-abc...%$11
-abc...xyz
-]]]
+{{{ //:javascript wrap start
+... //:body
+}}} //:end
+
+[[[ //:multi string wrap start
+... //:body
+]]] //:end
 
 //one line wrap order
-$11 {{{1+3}}}//same mean $11=eval(1+3)
-$22 [[[this is string.value %$11]]] //$22="this is string. value 4"
+$XX {{{1+3}}}//same mean $11=eval(1+3)
+$XX [[[this is string.value %$11]]] //$XX="this is string. value 4"
 
 //address and jump
 @xx //:set the main address. head the @. one macro, one @.
@@ -98,6 +80,40 @@ CLR //:all layer clear
 
 ```
 //examples valiable
+$00?#1 //:exist check. if($00) jump to #1
+$00!#1 //:void check. if(!$00) jump to #1
+$00=V #1//:equal check. if($00===V) jump to #1
+$00<V #1 //:if smaller than V, jump to #1
+$00>V #1 //:if bigger than V, jump to #1
+//mathmatics
+$11+V //:$11+=V
+$11-V //:$11-=V
+$11%V //:modulo always positive valiable. $11=Math.abs($11%V)
+
+```
+```
+//examples wrap order
+{{{
+ console.log('x')
+ //wrap order for javascript
+ //javascript direct on MaDaM 
+}}}
+[[[
+line1 wrap order for multi string 
+line2 this value input to $00
+line3
+]]]
+$00//line1 ...line2... line3
+$11 xyz
+[[[
+valiable injection %$xx
+abc...%$11
+abc...xyz
+]]]
+
+//one line wrap order
+$11 {{{1+3}}}//same mean $11=eval(1+3)
+$22 [[[this is string.value %$11]]] //$22="this is string. value 4"
 
 ```
 
