@@ -116,7 +116,17 @@ $11 {{{1+3}}}//same mean $11=eval(1+3)
 $22 [[[this is string.value %$11]]] //$22="this is string. value 4"
 
 ```
-
+```
+//examples address jump
+//looping
+$11 0
+<<< #1
+$11+1
+$11=100 #2
+>>> #1
+MRK #2
+//$11=100
+```
 ```
 //examples drawing
 //drawing and apply
