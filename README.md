@@ -1,4 +1,9 @@
 # MaDaM quick
+```
+//pug
+script(src="https://gnjo.github.io/MaDaM/mdm.js")
+```
+
 ```js
 let macro=`
 @xyz
