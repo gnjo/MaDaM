@@ -20,6 +20,12 @@ jump order```^[><][><][><]```
 //... loop
 >>> #1
 ```
+address order
+```
+@main //one macro, one only. 
+<<< #xyz //# is sub address
+MRK #xyz //same mean <<<
+```
 # wrap order
 ```
 [[[
@@ -38,6 +44,24 @@ TXT [[[thi is quick wrap order.]]] X00
 ```
 TXT {{{1+2+3}}} X00 //disp the 6
 ```
+# quick jump order
+```
+IFJ 1 >>> TXT true X00 >>>
+```
+# always address the $$$
+```
+@xyz
+<<< #1
+
+IFJ 1 #2
+TXT $$$ X00 //@xyz#1:4
+
+>>> #1
+
+<<< #2
+TXT $$$ X00 //@xyz#2:8
+>>>
+```
 # always return value the $00
 ```
 $11 xyz//$11 xyz
@@ -49,10 +73,6 @@ TXT $00 X00//xyz
 xyz
 ]]]
 TXT $00 X00//xyz
-```
-# quick jump order
-```
-IFJ 1 >>> TXT true X00 >>>
 ```
 
 # always last key the $$0, prev the $$1
