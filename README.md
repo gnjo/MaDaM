@@ -174,26 +174,24 @@ $$0=A >>> $$1=B #1 >>> //A pressed B
 $$0=B >>> $$1=A #1 >>> //A pressed B
 ```
 
-# MaDaM cmd definition 
-```js
+# MaDaM method
+```
+//cmd definition
 mdm.def(cmd,fn) //definition
 mdm.cmd(cmd,ary) //done
-```
 
-# MaDaM sequence the inner(mdm.run)
-```
-mdm.css //css setting
-mdm.key //key setting
-mdm.elm //element setting
-mdm.lex //macro lex
-mdm.fop //frameloop on fps
-mdm.lop //lineloop on lps
+//equence the inner
+mdm.run(str,fps,lps)
+mdm.css() //css setting
+mdm.key() //key setting
+mdm.elm() //element setting
+mdm.lex(str) //macro lex
+mdm.fop() //frameloop on fps
+mdm.lop() //lineloop on lps
  //and finally
- mdm.red //read the macro on the lineloop
-```
+ mdm.red() //read the macro on the lineloop
 
-# MaDaM areas
-```
+//areas
 mdm.sd.xxx //macro valiable set here. like a savedata.
 mdm.db.xxx //macro const data set here. like a database.
 mdm.md.xxx //madam system valiable set here. fps, lps, looptick, like a madam-data.
