@@ -187,7 +187,7 @@ $$0=B >>> $$1=A #1 >>> //A pressed B
 ### MaDaM method
 ```
 //cmd definition
-mdm.def(cmd,fn,man) //definition. man is command hint text.
+mdm.def(cmd,fn,man) //definition. man set the text for command help.
 mdm.cmd(cmd,ary) //done
 
 mdm.man(cmd) //command help to return value.
