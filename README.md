@@ -1,7 +1,7 @@
 # MaDaM
-macro engine for the game.
+macro engine for mocup game.
 
-# command one line
+# one order
 basic ```^[$0-9A-Z][$0-9A-Z][$0-9A-Z]```
 ```
 KEY
@@ -14,7 +14,7 @@ special math hand ```^$[$0-9A-Z][$0-9A-Z][\=|\%|\+|\-|\>|\<|\?|\!]```
 ```
 $00?X J//
 ```
-# command multi line
+# wrap order
 ```
 [[[
 ...string...on MaDaM
@@ -24,4 +24,8 @@ $00?X J//
 {{{
 ...javascript...on MaDaM
 }}}
+```
+# quick wrap order
+```
+TXT [[[thi is quick wrap order.]]] X00
 ```
