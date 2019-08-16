@@ -181,7 +181,7 @@ mdm.cmd(cmd,fn) //definition
 mdm.cmd(cmd,ary) //done
 ```
 
-# MaDam sequence the inner
+# MaDaM sequence the inner
 ```
 mdm.css //css setting
 mdm.key //key setting
@@ -193,7 +193,7 @@ mdm.lop //lineloop on lps
  mdm.red //read the macro on the lineloop
 ```
 
-# MaDam areas
+# MaDaM areas
 ```
 mdm.v.xxx //macro valiable set here. like a savedata.
 mdm.c.xxx //macro const data set here. like a database.
