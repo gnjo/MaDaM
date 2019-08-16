@@ -85,4 +85,13 @@ $$0?A #1
 $$1?B >>> TXT [[[A press and B press]]] X00 >>>
 >>>
 ```
+# always living, layer the X00
+other layer X01...XZZ
+```
+X00 0 0 0 640 480 #000
+X01 100 100 100 200 200 yellow
+DEL X01 //canable the detele X01 layer.
+DEL X00 //dont delete
+CLR X00
+```
 
