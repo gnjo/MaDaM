@@ -101,7 +101,7 @@ CLR X //:text and image clear and set font color white. X is layer.
 X00 //:same mean "CLR X00"
 CLR //:all layer clear
 
-//key input $$0 $$1
+//key input $$0 $$1 value is e.which number on keydown.
 KLR X //:key clear $$0 or $$1
 KLR //:key clear $$0 $$1
 KEY A //:key wait. if pressed A key, control back macro. blocking.
@@ -182,6 +182,21 @@ $00?#1 //:if cancel, jump to #1
 //examples keypressed
 $$0=A >>> $$1=B #1 >>> //A pressed B
 $$0=B >>> $$1=A #1 >>> //A pressed B
+//key meaning
+$KS 13 //enter key
+$$0=$KS #1//if enter jump to #1
+$KA 65 //A 
+$KB 66 //B
+$KY 89 //Y
+$KX 88 //X
+$KS 13 //enter key mean system
+$KP 32 //space key mean pause
+$K7 103 //numpad7 mean LL
+$K9 105 //numpad9 mean RR
+$KU 38 //arrow up
+$KD 40 //arrow down
+$KL 37 //arrow left
+$KR 39 //arrow right
 ```
 
 ### MaDaM method
