@@ -27,11 +27,11 @@ MDM.run(macro,fps,lps)
 # MaDaM cmd
 ```
 //valiable
-$00 //:always return value.
-$$0 //:always pressed key.
-$$1 //:always old pressed key. 
+$00 //:special. always return value.
+$$0 //:special. always pressed key.
+$$1 //:special. always old pressed key. 
+$$$ //:special. always address. ex)@xyz#aaa:14
 $00...$ZZ //:MaDaM values. MaDaM value use the math hand. ex) $00?1 #1 //exist jump
-$$$ //:always address. ex)@xyz#aaa:14
 //input
 $11 1//:$11=1
 $11 aiuewo//:$11="aiuewo"
@@ -83,8 +83,13 @@ CLR X //:text and image clear and set font color white. X is layer.
 X00 //:same mean "CLR X"
 CLR //:all layer clear
 
-//keys...
-
+//key input $$0 $$1
+KLR X //:key clear $$0 or $$1
+KLR //:key clear $$0 $$1
+KEY A //:key wait. if pressed A key, control back macro. blocking.
+KEY A #xx//:if pressed A key, jump to #xx
+KEY *//:pressed anykey
+$$0=A #xx //:if last key pressed A, jump to #xx. non blocking.
 ```
 
 ```
@@ -146,6 +151,12 @@ YON T F X //:ask Yes Or No. T is 3line strings. F is 0 or 1. X is layer. blockin
 SEL T N X //:like a YON, but any select. N is select number. blocking.
 //return selected number. cancel is void 0.
 $00?#1 //:if cancel, jump to #1
+```
+
+```
+//examples keypressed
+$$0=A >>> $$1=B #1 >>> //A pressed B
+$$0=B >>> $$1=A #1 >>> //A pressed B
 ```
 
 # MaDaM cmd definition 
