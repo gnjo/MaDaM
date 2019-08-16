@@ -83,6 +83,8 @@ CLR X //:text and image clear and set font color white. X is layer.
 X00 //:same mean "CLR X"
 CLR //:all layer clear
 
+//keys...
+
 ```
 
 ```
@@ -145,3 +147,11 @@ SEL T N X //:like a YON, but any select. N is select number. blocking.
 //return selected number. cancel is void 0.
 $00?#1 //:if cancel, jump to #1
 ```
+
+# MaDaM cmd defnition 
+```js
+MDM.cmd(cmd,fn) //definition
+
+MDM.cmd(cmd,ary) //done
+```
+
