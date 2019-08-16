@@ -185,11 +185,12 @@ mdm.run(str,fps,lps)
 mdm.css() //css setting
 mdm.key() //key setting
 mdm.elm() //element setting
+mdm.mid() //sound setting. to be futured...
 mdm.lex(str) //macro lex
 mdm.fop() //frameloop on fps
 mdm.lop() //lineloop on lps
- //and finally
- mdm.red() //read the macro on the lineloop
+//and finally
+mdm.red() //read the macro on the lineloop
 
 //areas
 mdm.sd.xxx //macro valiable set here. like a savedata.
