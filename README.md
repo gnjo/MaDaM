@@ -2,7 +2,7 @@
 ```
 //history
 v0.001 draft
-v0.010 address jump <--- now
+v0.010 address jump <--- mile stone
 ```
 ### outer quick
 ```
