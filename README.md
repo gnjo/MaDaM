@@ -193,3 +193,12 @@ mdm.lop //lineloop on lps
  mdm.red //read the macro on the lineloop
 ```
 
+# MaDam areas
+```
+mdm.v.xxx //macro valiable set here. like a savedata.
+mdm.c.xxx //macro const data set here. like a database.
+mdm.s.xxx //madam system valiable set here. like a fps, lps, looptick.
+mdm.fn.xxx //useful functions
+mdm.is.xxx //is check
+mdm.re.xxx //regex
+```
