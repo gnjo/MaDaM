@@ -189,7 +189,7 @@ mdm.elm //element setting
 mdm.lex //macro lex
 mdm.fop //frameloop on fps
 mdm.lop //lineloop on lps
-//and finally
-mdm.red //read on the macro
+ //and finally
+ mdm.red //read the macro on the lineloop
 ```
 
