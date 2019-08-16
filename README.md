@@ -26,7 +26,7 @@ TXT countmax X00
 MRK #2 //end
 `
 let fps=20,lps=200
-MDM.run(macro,fps,lps)
+mdm.run(macro,fps,lps)
 ```
 
 # MaDaM cmd
@@ -172,8 +172,8 @@ $$0=B >>> $$1=A #1 >>> //A pressed B
 
 # MaDaM cmd definition 
 ```js
-MDM.cmd(cmd,fn) //definition
+mdm.cmd(cmd,fn) //definition
 
-MDM.cmd(cmd,ary) //done
+mdm.cmd(cmd,ary) //done
 ```
 
