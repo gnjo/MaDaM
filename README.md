@@ -1,3 +1,28 @@
+# MaDaM quick
+```js
+let macro=`
+@xyz
+X00 0 0 0 600 480 #000
+<<< #0
+[[[
+hello,MaDaM
+count %$11
+]]]
+$22 $00
+TXT $22 X00
+$11+1
+$11=100 #2
+>>> #0
+
+<<< #1
+>>> #2
+TXT countmax X00
+MRK #2 //end
+`
+let fps=20,lps=200
+MDM.run(macro,fps,lps)
+```
+
 # MaDaM cmd
 ```
 //valiable
