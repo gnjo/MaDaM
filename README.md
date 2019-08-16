@@ -11,12 +11,13 @@ count %$11
 $22 $00
 TXT $22 X00
 $11+1
-$11=100 #2
+$11=100 #1 //count limit jump
 >>> #0
 
 <<< #1
->>> #2
 TXT countmax X00
+>>> #2
+
 MRK #2 //end
 `
 let fps=20,lps=200
