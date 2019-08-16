@@ -14,13 +14,14 @@ script(src="https://gnjo.github.io/MaDaM/mdm.js")
 let macro=`
 @xyz
 X00 0 0 0 600 480 #000
+MIM FOO TXT //:mime FOO same command the TXT
 <<< #0
 [[[
 hello,MaDaM
 count %$11
 ]]]
 $22 $00
-TXT $22 X00
+FOO $22 X00
 $11+1
 $11=100 #1 //count limit jump
 >>> #0
@@ -40,6 +41,7 @@ mdm.run(macro,fps,lps)
 //command help
 MAN C //:C is command.
 MAN //:all command help
+MIM N C//:mime command copy, N command same the C
 //valiable
 $00 //:special. always return value.
 $$0 //:special. always pressed key.
