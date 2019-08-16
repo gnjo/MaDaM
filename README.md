@@ -1,4 +1,8 @@
-# MaDaM quick
+### MaDaM history
+```
+v0.001 draft
+```
+### MaDaM quick
 ```
 //pug
 script(src="https://gnjo.github.io/MaDaM/mdm.js")
@@ -29,7 +33,7 @@ let fps=20,lps=200
 mdm.run(macro,fps,lps)
 ```
 
-# MaDaM cmd
+### MaDaM cmd
 ```
 //valiable
 $00 //:special. always return value.
@@ -174,13 +178,13 @@ $$0=A >>> $$1=B #1 >>> //A pressed B
 $$0=B >>> $$1=A #1 >>> //A pressed B
 ```
 
-# MaDaM method
+### MaDaM method
 ```
 //cmd definition
 mdm.def(cmd,fn) //definition
 mdm.cmd(cmd,ary) //done
 
-//equence the inner
+//sequence the inner
 mdm.run(str,fps,lps)
 mdm.css() //css setting
 mdm.key() //key setting
