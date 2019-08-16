@@ -148,7 +148,7 @@ SEL T N X //:like a YON, but any select. N is select number. blocking.
 $00?#1 //:if cancel, jump to #1
 ```
 
-# MaDaM cmd defnition 
+# MaDaM cmd definition 
 ```js
 MDM.cmd(cmd,fn) //definition
 
