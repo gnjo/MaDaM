@@ -1,5 +1,16 @@
 # MaDaM
 macro engine for mocup game.
+```
+let fps=20,lps=200
+;
+let str=`
+X00 0 0 0 640 480 #000
+TXT start X00
+`
+;
+MDM.run(str,fps,lps)
+
+```
 
 # one order
 basic ```^[$0-9A-Z][><$0-9A-Z][$0-9A-Z]```
