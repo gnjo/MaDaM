@@ -4,11 +4,20 @@ macro engine for mocup game.
 let fps=20,lps=200
 ;
 let str=`
+@entrypoint
 X00 0 0 0 640 480 #000
 TXT start X00
 `
 ;
+MDM.f=async(url)=>{
+ return await fetch(url).then(d=>d.text())
+}
+MDM.q=(query)=>{
+ return document.querySelector(query).textContent
+}
+
 MDM.run(str,fps,lps)
+
 
 ```
 
