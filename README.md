@@ -88,7 +88,7 @@ IFJ 1 >>> TXT quick X00 >>>
 $$0=A >>> TXT A_pressed X00 >>>
 
 //drawing
-X00 //:main layer, default back color #000 //background black, font color white
+X00 //:special main layer, default back color #000 //background black, font color white
 X01...X09 //:sub layers, default back color #0000 //transparent
 X00 x y z w h c//:position and default color set. z is z-index. c is color.
 IMG D X//:draw the image. D is color or image. X is layer. 
