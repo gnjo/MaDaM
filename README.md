@@ -104,7 +104,7 @@ $$0=A #xx //:if last key pressed A, jump to #xx. non blocking.
 
 //sleep
 SLP F //:read blocking, key blocking, while the F flame.
-SLP V ms //:order V millisecond
+SLP V ms //:order V millisecond. this ms order the about by flame base calc.
 ```
 
 ```
