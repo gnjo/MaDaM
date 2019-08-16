@@ -181,7 +181,7 @@ mdm.cmd(cmd,fn) //definition
 mdm.cmd(cmd,ary) //done
 ```
 
-# MaDaM sequence the inner
+# MaDaM sequence the inner(mdm.run)
 ```
 mdm.css //css setting
 mdm.key //key setting
