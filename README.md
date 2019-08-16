@@ -29,3 +29,6 @@ $00?X J//
 ```
 TXT [[[thi is quick wrap order.]]] X00
 ```
+```
+TXT {{{1+2+3}}} X00 //disp the 6
+```
