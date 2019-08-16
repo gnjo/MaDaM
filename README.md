@@ -183,14 +183,13 @@ mdm.cmd(cmd,ary) //done
 
 # MaDam sequence the inner
 ```
-css setting
-key setting
-element setting
-macro lex
-drawloop on fps
-macroloop on lps
-
-and finally
-read on the macro
+mdm.css //css setting
+mdm.key //key setting
+mdm.elm //element setting
+mdm.lex //macro lex
+mdm.fop //frameloop on fps
+mdm.lop //lineloop on lps
+//and finally
+mdm.red //read on the macro
 ```
 
