@@ -32,11 +32,13 @@ $$0 //:special. always pressed key.
 $$1 //:special. always old pressed key. 
 $$$ //:special. always address. ex)@xyz#aaa:14
 $00...$ZZ //:MaDaM values. MaDaM value use the math hand. ex) $00?1 #1 //exist jump
+SET X Y//: X=Y
+SET X //: X=void 0
 //input
-$11 1//:$11=1
+$11 1//:$11=1 same mean "SET $11 1"
 $11 aiuewo//:$11="aiuewo"
 $11 $00//:$11=$00
-$11 //:reset $11=void 0
+$11 //:reset $11=void 0 . same mean "SET $11"
 
 //valiable math hand
 $00?... //:? ! = < >
@@ -84,7 +86,7 @@ TXT D //:same mean "TXT D X00"
 COO D X//:font color change
 COO D //:same mean "COO D X00"
 CLR X //:text and image clear and set font color white. X is layer.
-X00 //:same mean "CLR X"
+X00 //:same mean "CLR X00"
 CLR //:all layer clear
 
 //key input $$0 $$1
