@@ -2,7 +2,12 @@
 ```
 //history
 v0.001 draft
-v0.002 coded the mdm.core.js 
+v0.002 coded the mdm.core.js
+v0.003 coded the drawing. X00-X09 CLR TXT IMG COO
+v0.004 coded the parent board XXX
+v0.005 coded the sleep. SLP
+v0.006 coded the key-ing. KEY KLR $$0 $$1
+v0.007 coded >>> ...
 v0.010 address jump <--- mile stone
 ```
 ```
