@@ -6,12 +6,12 @@ v0.002 coded the mdm.core.js
 v0.010 address jump <--- mile stone
 ```
 ```
-//package list
+//mdm.xxx.js group the pack into mdm.js
 mdm.js
- |-mdm.core.js
- |-mdm.fn.js //fn is re 
- |-mdm.run.js
- |-mdm.lex.js
+ mdm.core.js
+ mdm.fn.js //fn is re 
+ mdm.run.js
+ mdm.lex.js
 ```
 ### outer quick
 ```
