@@ -38,7 +38,8 @@
    //cmd call error
    mdm.sd['$00']=void 0;
    let mes='command call error! cmd param address line'
-   console.warning(mes,cmd,ary,mdm.sd['$$$'],mdm.md.n)
+   console.error(e)
+   console.error(mes,cmd,ary,mdm.sd['$$$'],mdm.md.n)
   }
   return mdm;
  }
