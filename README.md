@@ -133,7 +133,7 @@ SLP F //:read blocking, key blocking, while the F flame.
 ```
 //examples command order
 BOO {{{ //:taboo the javascript wrap
-MIM COR COO /:commant COO same mean the COR
+MIM COR COO /:new command the COR same mean the COO
 ```
 
 ```
