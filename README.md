@@ -91,8 +91,7 @@ $XX [[[this is string.value %$11]]] //$XX="this is string. value 4"
 //<--- single comment out 
 
 //address and jump
-@xx //:set the main address. head the @. one macro, one @.//ex)@xyz //same mean @xyz#entorypoint:line
-//dont use the #entorypoint. #entorypoint is special. 
+@xx //:set the main address. head the @. one macro, one @.
 <<< #xx //:set the sub address. head the #. full address is @xx#xx:line
 MRK #xx //:same mean the "<<< #xx"
 >>> #xx //:jump to #xx.
