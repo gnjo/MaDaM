@@ -6,6 +6,7 @@ v0.002 coded the mdm.core.js
 v0.010 address jump <--- mile stone
 ```
 ```
+//build hint.
 //mdm.xxx.js group the pack into mdm.js
 mdm.js
  mdm.core.js
