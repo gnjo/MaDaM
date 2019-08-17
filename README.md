@@ -4,6 +4,14 @@
 v0.001 draft
 v0.010 address jump <--- mile stone
 ```
+```
+//package list
+mdm.js
+ |-mdm.core.js
+ |-mdm.fn.js //fn is re 
+ |-mdm.run.js
+ |-mdm.lex.js
+```
 ### outer quick
 ```
 //pug
