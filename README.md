@@ -48,10 +48,12 @@ mdm.run(macro,fps,lps)
 
 ### outer cmd
 ```
-//command help
+//command utility order
 MAN C //:C is command.
 MAN //:all command help
 MIM N C//:mime command copy, N command same the C
+BOO C //:taboo command the C change to comment.
+
 //valiable
 $00 //:special. always return value.
 $$0 //:special. always pressed key.
