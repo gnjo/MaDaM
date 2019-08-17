@@ -51,8 +51,8 @@ mdm.run(macro,fps,lps)
 //command utility order
 MAN C //:C is command.
 MAN //:all command help
-MIM N C//:mime command copy, N command same the C
-BOO C //:taboo command the C change to comment.
+MIM N C//:mime command copy, N command same the C.  hopefull...
+BOO C //:taboo command the C change to comment. hopefull...
 
 //valiable
 $00 //:special. always return value.
@@ -118,10 +118,10 @@ X00 //:same mean "CLR X00"
 CLR //:all layer clear
 
 //key input $$0 $$1 value is e.which number on keydown.
-KLR X //:key clear $$0 or $$1
+KLR X //:key clear $$0 or $$1. hopefull...
 KLR //:key clear $$0 $$1
-KEY A //:key wait. if pressed A key, control back macro. blocking.
-KEY A #xx//:if pressed A key, jump to #xx
+KEY A //:key wait. if pressed A key, control back macro. blocking. hopefull...
+KEY A #xx//:if pressed A key, jump to #xx. hopefull...
 KEY *//:pressed anykey
 $$0=A #xx //:if last key pressed A, jump to #xx. non blocking.
 
