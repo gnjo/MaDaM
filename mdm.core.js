@@ -27,6 +27,7 @@
   if(!fn)return;
   mdm.md.man[cmd]=man||cmd+"//: man command Nothing" //command help
   mdm.md.cmds[cmd]=fn//all command definitions
+  console.log('defined ',mdm.md.cmds,cmd)
   return mdm;
  }
  //cmd done
