@@ -2,6 +2,7 @@
 ```
 //history
 v0.001 draft
+v0.002 coded the mdm.core.js 
 v0.010 address jump <--- mile stone
 ```
 ```
