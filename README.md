@@ -275,4 +275,8 @@ mdm.def('SLP',(frame)=>{
  setTimeout(()=>{ mdm.md.readblock=mdm.md.keyblock=0 },ms)
 },'')
 ```
-
+### inner jump and macro set
+```
+mdm.jmp(mdm.sd['$$$'])//read change and marcro start. @main#sub:line or @main#sub or @main or @main:line 
+mdm.is.jump(mdm.sd['$$$'])
+```
