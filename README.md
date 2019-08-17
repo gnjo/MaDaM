@@ -131,6 +131,12 @@ SLP F //:read blocking, key blocking, while the F flame.
 ```
 
 ```
+//examples command order
+BOO {{{ //:taboo the javascript wrap
+MIM COR COO /:commant COO same mean the COR
+```
+
+```
 //examples valiable
 $00?#1 //:exist check. if($00) jump to #1
 $00!#1 //:void check. if(!$00) jump to #1
