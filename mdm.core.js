@@ -1,6 +1,7 @@
 //history
 //v1 make. first call
 //v2 coded the mdm.def mdm.cmd mdm.man
+//v3 coded mdm.lex
 ;(function(root){
  let mdm=root.mdm||{}
  
@@ -107,4 +108,59 @@
  */
 })(mdm.fn);
 
+//mdm.lex
+;(function(mdm){
+ //let mdm=root.mdm||{}
+ mdm.re.madam=/^[><$A-Z0-9]{3}/
+ mdm.re.memory=/^$[0-9][0-9]/
+ mdm.re.comment=/^\/\//
+ mdm.re.scr0=/^\[\[\[|^\{\{\{/
+ mdm.re.scr1=/^\]\]\]|^\}\}\}/
+ //mdm.re.tailcomment=/\/\/(?:.*)$/
+ //mdm.re.tailcomment=/(.{2}(?:[^\/\/]*)$|(?: \/\/.*$))/
+ mdm.re.tailcomment=/(^\s*\/\/.*|\s*[^:]\/\/.*)/
+ mdm.re.address=/^@/
+ mdm.re.addressfill=/(#.+)/
+ mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{/
+ mdm.re.ad=/^(@.*)|\n(@.*)/
+ ;
+ mdm.lex=function lex(text){
+  //
+  let re=mdm.re
+  ,line=(re.ad.test(text))?text.match(re.ad).filter(d=>d).pop():''
+  ,addr=mdm.fn.addr(line)
+  ,ary=(line)?text.split('\n'):(addr.get('@#')+'\n'+text).split('\n')
+  ,jumps={}
+  ,wk=void 0
+  ,f=(d)=>d.replace(re.tailcomment,'').trim()
+  ,f2=(d,i)=>{
+   //address replace
+   if(re.escapeaddress.test(d))return d;
+   let supply=addr.get('@#')
+   let to=mdm.fn.addr(supply).set(d).get('@#')
+   re.addressfill=/(@\w+#\w+)|(@\w+)|(#\w+)/
+   let frm=re.addressfill.test(d)?d.match(re.addressfill).filter(d=>d).pop():to
+   //console.log(frm,to)
+   let d2=d.replace(frm,to)
+   ,flg=/^<<<|^@|^MRK/.test(d2)&&/(@.+)/.test(d2)
+   if(flg) jumps[to]=i;
+   return d2;
+  }
+  //
+  ary=ary.map((dd,i)=>{
+   let d=f(dd)
+   if(wk&&re.scr1.test(d)){let a=wk+'\n'+d; wk=void 0; return a}
+   if(wk&&(!re.scr1.test(d))){ wk+='\n'+d; return ''}
+   if(re.scr0.test(d)){ wk=d; return ''}
+   if(re.address.test(d)){return f2(d,i)}
+   if(re.madam.test(d)){return f2(d,i)}
+   if(re.comment.test(d)){return d}
+   return ''
+  })
+  ;
+  return {data:ary,addr:addr.get('@#'),jumps:jumps}
+ }
+
+ //root.mdm=mdm;
+})(mdm);
 
