@@ -280,3 +280,21 @@ mdm.def('SLP',(frame)=>{
 mdm.jmp(mdm.sd['$$$'])//read change and macro start. @main#sub:line or @main#sub or @main or @main:line 
 mdm.is.jump(mdm.sd['$$$'])
 ```
+
+### idea A00 AZZ area
+```
+//area is x y d map
+A00 is depth 00
+A01 is depth 01
+A02 is depth 02
+
+//define is string and \n
+[[[
+■■■
+■■■
+■■■
+]]]
+//input $00
+A00 $00
+MAP x y A00 X00//drawing 3x3 map. center x y. draw size by X00... order 
+```
