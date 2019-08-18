@@ -9,7 +9,7 @@ v0.005 coded the sleep. SLP
 v0.006 coded the key-ing. KEY KLR $$0 $$1
 v0.007 coded >>> 
 v0.010 coded address jump <--- mile stone. 20190818 
-v0.011 coding...
+v0.011 coding lex to mdm.core.js
 v0.020 math hand <--- mile stone.
 ```
 ```
