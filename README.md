@@ -137,14 +137,6 @@ SLP T ms//:read blocking, key blocking, while the T ms.
 SLP T //:same mean the "SLP T ms"
 SLP F fps //:order the F flame 
 
-
-//map order
-A00...AZZ
-A00 X //:X is multi string. like a x y.
-//blink order
-B00...BZZ
-B00 S C//:if S is あいうえあいうえ, blink the あ>い>う>え>... blink rate 8 fps.
-//C is color.
 ```
 
 ```
@@ -290,7 +282,7 @@ mdm.jmp(mdm.sd['$$$'])//read change and macro start. @main#sub:line or @main#sub
 mdm.is.jump(mdm.sd['$$$'])
 ```
 
-### idea A00 AZZ area
+### idea A00...AZZ map order. B00..BZZ blink cursor order.
 ```
 //area is x y d map
 A00 is depth 00
@@ -305,5 +297,15 @@ A02 is depth 02
 ]]]
 //input $00
 A00 $00
-MAP x y A00 X00//drawing 3x3 map. center x y. draw size by X00... order 
+MAP x y A00 X00//drawing 3x3 map. center x y. draw size by X00... order
+
+//map order
+A00...AZZ
+A00 X //:X is multi string. like a x y.
+
+//blink order
+B00...BZZ
+B00 S C//:if S is あいうえあいうえ, blink the あ>い>う>え>... blink rate 8 fps.
+//C is color.
+
 ```
