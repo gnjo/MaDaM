@@ -59,7 +59,7 @@ mdm.run(macro,fps,lps)
 MAN C //:C is command.
 MAN //:all command help
 MIM N C//:mime command copy, N command same the C.  hopefull...
-BOO C //:taboo command the C change to comment. hopefull...
+TBO C //:taboo command the C change to comment. hopefull...
 
 //valiable
 $00 //:special. always return value.
@@ -136,11 +136,20 @@ $$0=A #xx //:if last key pressed A, jump to #xx. non blocking.
 SLP T ms//:read blocking, key blocking, while the T ms. 
 SLP T //:same mean the "SLP T ms"
 SLP F fps //:order the F flame 
+
+
+//map order
+A00...AZZ
+A00 X //:X is multi string. like a x y.
+//blink order
+B00...BZZ
+B00 S C//:if S is あいうえあいうえ, blink the あ>い>う>え>... blink rate 8 fps.
+//C is color.
 ```
 
 ```
 //examples command order
-BOO {{{ //:taboo the javascript wrap
+TBO {{{ //:taboo the javascript wrap
 MIM COR COO /:new command the COR same mean the COO
 ```
 
