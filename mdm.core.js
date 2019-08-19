@@ -231,7 +231,7 @@ background-size: cover;
  mdm.def=(cmd,fn,man)=>{
   if(!cmd)return;
   if(!fn)return;
-  mdm.md.man[cmd]=man||cmd+"//: man command Nothing" //command help
+  mdm.md.man[cmd]=man||cmd+" //: man command Nothing" //command help
   mdm.md.cmds[cmd]=fn//all command definitions
   //console.log('defined ',mdm.md.cmds,cmd)
   return mdm;
@@ -241,14 +241,17 @@ background-size: cover;
   if(!cmd)return;
   try{
    mdm.sd['$00']=mdm.md.cmds[cmd].apply(null,ary||[])
+   //bug fix
   }catch(e){
    //cmd call error
    mdm.sd['$00']=void 0;
    let mes='command call error! cmd param address line'
    console.error(e)
    console.error(mes,cmd,ary,mdm.sd['$$$'],mdm.md.n)
+  }finally{
+   return mdm.sd['$00']
   }
-  return mdm;
+  //return mdm;
  }
 
  //command help to return value.
