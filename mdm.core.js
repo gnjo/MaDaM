@@ -36,6 +36,10 @@
 //mdm.md
 ;(function(mdm){
  //areas
+ //
+ mdm.md.man={}
+ mdm.md.cmds={}
+ ;
  mdm.md.readblock=0
  mdm.md.keyblock=0
  mdm.md.fps=20
@@ -50,33 +54,11 @@
  mdm.md.jumpstack=[] //
  mdm.md.jumps={}
  mdm.md.macros={}
- mdm.md.n=0 //now line 
-})(mdm);
-
-//mdm.is re
-;(function(mdm){
+ mdm.md.n=0 //now line
  ;
- mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\}))|([^ ]+)/g
- mdm.re.wraptrim=/(^\/\*)|(^\{\{\{)|(^\[\[\[)/ // /* ?
- ;
- mdm.is.madamvalue=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]$/.test(d)} 
- mdm.is.wrapjs=(d)=>{return /^\{\{\{/.test(d)}
- mdm.is.wrapstring=(d)=>{return /^\[\[\[/.test(d)}
- mdm.is.madamvalueline=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]/.test(d)}
- //? ! = < > + - %
- mdm.is.mathhand=(d)=>{return /[\?\!\=\>\<\+\-\%]/.test(d)}
- mdm.is.mathcompare=(d)=>{return /[\=\>\<]/.test(d)}
- mdm.is.mathexist=(d)=>{return /[\?\!]/.test(d)}
- mdm.is.math=(d)=>{return /[\+\-\%]/.test(d)}
- //let is=is||{}
- mdm.is.layer=(d)=>/X0[0-9]/.test(d)
- mdm.is.X00=(d)=>(d==='X00')
- mdm.is.function = function(obj){return toString.call(obj) === '[object Function]'}
- mdm.is.array = Array.isArray || function(obj){return toString.call(obj) === '[object Array]'}
- mdm.is.keyflg=(d)=>/^\$\$[01]/.test(d)
- 
+ mdm.md.unit='rem'
+ ; 
 })(mdm);
-
 //mdm.css values
 ;(function(mdm){
 mdm.md.css=`
@@ -102,7 +84,53 @@ background-size: cover;
 `;
  mdm.md.styleclass='madamstyle'
  
-})(mdm); 
+})(mdm);
+
+//mdm.is re
+;(function(mdm){
+ //lex
+ mdm.re.madam=/^[><$A-Z0-9]{3}/
+ mdm.re.memory=/^$[0-9][0-9]/
+ mdm.re.comment=/^\/\//
+ mdm.re.scr0=/^\[\[\[|^\{\{\{/
+ mdm.re.scr1=/^\]\]\]|^\}\}\}/
+ //mdm.re.tailcomment=/\/\/(?:.*)$/
+ //mdm.re.tailcomment=/(.{2}(?:[^\/\/]*)$|(?: \/\/.*$))/
+ mdm.re.tailcomment=/(^\s*\/\/.*|\s*[^:]\/\/.*)/
+ mdm.re.address=/^@/
+ mdm.re.addressfill=/(#.+)/
+ mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{/
+ mdm.re.ad=/^(@.*)|\n(@.*)/ 
+ ;
+ mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\}))|([^ ]+)/g
+ mdm.re.wraptrim=/(^\/\*)|(^\{\{\{)|(^\[\[\[)/ // /* ?
+ ;
+ ;
+ mdm.is.function = function(obj){return toString.call(obj) === '[object Function]'}
+ mdm.is.array = Array.isArray || function(obj){return toString.call(obj) === '[object Array]'} 
+ mdm.is.number = function(obj){return toString.call(obj) === '[object Number]'}
+ mdm.is.color=function(d){
+  return /(?:(^#[0-9A-F]{6})|(^#[0-9A-F]{8})|(^#[0-9A-F]{4})|(^#[0-9A-F]{3})|transparent|black|white)$/i.test(d)
+ } 
+ ;
+ mdm.is.madamvalue=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]$/.test(d)} 
+ mdm.is.wrapjs=(d)=>{return /^\{\{\{/.test(d)}
+ mdm.is.wrapstring=(d)=>{return /^\[\[\[/.test(d)}
+ mdm.is.madamvalueline=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]/.test(d)}
+ //? ! = < > + - %
+ mdm.is.mathhand=(d)=>{return /[\?\!\=\>\<\+\-\%]/.test(d)}
+ mdm.is.mathcompare=(d)=>{return /[\=\>\<]/.test(d)}
+ mdm.is.mathexist=(d)=>{return /[\?\!]/.test(d)}
+ mdm.is.math=(d)=>{return /[\+\-\%]/.test(d)}
+ //let is=is||{}
+ mdm.is.layer=(d)=>/X0[0-9]/.test(d)
+ mdm.is.keyflg=(d)=>/^\$\$[01]/.test(d)
+ ;
+ mdm.is.X00=(d)=>(d==='X00')
+ mdm.is.XXX=(d)=>(d==='XXX')
+ mdm.is.madamvalue=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]$/.test(d)} 
+})(mdm);
+
 
 //document element utility
 ;(function(fn){
@@ -143,8 +171,24 @@ background-size: cover;
  
 })(mdm.fn);
 
-//mdm.fn safetick get4 flip trimwrap trimwrap2 f
-;(function(mdm){
+//mdm.fn
+//nulltoX00 p1x1
+//safetick get4 flip trimwrap trimwrap2 f
+;(function(mdm){ 
+ mdm.fn.nulltoX00=(d)=>{return (d)?d:'X00'}
+ ;
+ mdm.fn.p1x1=function p1x1(c,w,h){
+  //ex) red or #f00 or #f005 or #ff0000 or #00000000 or transparent
+  let canvas=/*document.createElement*/mdm.fn.ce('canvas'),ctx=canvas.getContext('2d')
+  ;
+  canvas.width=w||1
+  canvas.height=h||1
+  ctx.fillStyle=c||"#000000"
+  ctx.fillRect(0,0,canvas.width,canvas.height)
+  ;
+  return canvas.toDataURL("image/png") //output
+ }
+ ;
  mdm.fn.safetick=(d)=>{return (d===mdm.md.imax)?1:(++d)}
  mdm.fn.get4=(d)=>d.charAt(3) //MTH ch tar add jmp 
  mdm.fn.flip=function arrayFlip(trans) {
@@ -177,12 +221,12 @@ background-size: cover;
 })(mdm);
 
 
-;(function(root){
+;(function(mdm){
  //coded the mdm.def, mdm.cmd, mdm.man 
  //
- let mdm=root.mdm||{}
- mdm.md.man={}
- mdm.md.cmds={}
+ //let mdm=root.mdm||{}
+ //mdm.md.man={}
+ //mdm.md.cmds={}
  //cmd definition
  //definition. man set the text for command help. 
  mdm.def=(cmd,fn,man)=>{
@@ -214,8 +258,8 @@ background-size: cover;
   if(!mdm.md.man[cmd])return cmd+'//: command not defined!'
   return mdm.md.man[cmd]
  }  
- root.mdm=mdm;
-})(this);
+ //root.mdm=mdm;
+})(mdm);
 
 //utility mdm.fn.addr
 ;(function(root){
@@ -273,18 +317,6 @@ background-size: cover;
 //mdm.lex
 ;(function(mdm){
  //let mdm=root.mdm||{}
- mdm.re.madam=/^[><$A-Z0-9]{3}/
- mdm.re.memory=/^$[0-9][0-9]/
- mdm.re.comment=/^\/\//
- mdm.re.scr0=/^\[\[\[|^\{\{\{/
- mdm.re.scr1=/^\]\]\]|^\}\}\}/
- //mdm.re.tailcomment=/\/\/(?:.*)$/
- //mdm.re.tailcomment=/(.{2}(?:[^\/\/]*)$|(?: \/\/.*$))/
- mdm.re.tailcomment=/(^\s*\/\/.*|\s*[^:]\/\/.*)/
- mdm.re.address=/^@/
- mdm.re.addressfill=/(#.+)/
- mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{/
- mdm.re.ad=/^(@.*)|\n(@.*)/
  ;
  mdm.lex=function lex(text){
   //
