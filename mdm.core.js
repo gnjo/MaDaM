@@ -101,7 +101,8 @@ background-size: cover;
  mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{/
  mdm.re.ad=/^(@.*)|\n(@.*)/ 
  ;
- mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\}))|([^ ]+)/g
+ //mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\}))|([^ ]+)/g
+ mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\})|(>>>(?:.*?)>>>))|([^ ]+)/g //add the set back >>> cmd a b >>>
  mdm.re.wraptrim=/(^\/\*)|(^\{\{\{)|(^\[\[\[)/ // /* ?
  ;
  ;
