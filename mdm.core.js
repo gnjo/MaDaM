@@ -33,6 +33,34 @@
  root.mdm=mdm;
 })(this);
 
+
+//mdm.css values
+;(function(mdm){
+mdm.md.css=`
+div.layer {
+line-height: 1;
+position: absolute;
+color: white;
+transition: background-image 0.7s ease;
+background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+/*transparent*/
+white-space: pre-wrap;
+word-break: break-all;
+font-family: monospace;
+}
+div.XXX {
+background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2NgYGD4DwABBAEAcCBlCwAAAABJRU5ErkJggg==);/*black*/
+}
+div.X00 {
+/*position: initial !important;*/
+background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2NgYGD4DwABBAEAcCBlCwAAAABJRU5ErkJggg==);/*black*/
+background-size: cover;
+}
+`;
+ mdm.md.styleclass='madamstyle'
+ 
+})(mdm); 
+
 //document element utility
 ;(function(fn){
  ;
