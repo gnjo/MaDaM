@@ -23,9 +23,11 @@ v0.099 coded man command check.
 v0.100 coded wrap call <---------------------- mile stone. 20190819
 v0.101 coded set back jump. $00=100 >>> $01 1 >>>
 >>>>>>>v0.101 coding...
-v0.110 touch gesture with hummer.js <--------- mile stone. 
-v0.120 preload call <------------------------- mile stone.
-v0.130 YON SEL make <------------------------- mile stone.
+v0.105 key binding for controler. ABXYLR aU aD aL aR S P. S is start. P is pause.
+v0.110 write the demo select loop. <--------- mile stone. 
+v0.120 touch gesture with hummer.js <--------- mile stone.
+v0.130 preload call <------------------------- mile stone.
+v0.140 YON SEL make <------------------------- mile stone.
 v0.200 write the demo the opning window on MaDaM. <--- mile stone.
 v0.300 write the demo thetetris on MaDaM. <--- mile stone.
 v1.000 build up. first pack mdm.js <---------- mile stone.
