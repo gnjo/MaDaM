@@ -309,3 +309,18 @@ B00 S C//:if S is あいうえあいうえ, blink the あ>い>う>え>... blink 
 //C is color.
 
 ```
+
+# outer DAT call
+```
+//DAT is data preload call;
+%name U F //: call name the %name. name is lowercase only.
+//dataplace the U, blocking flg is the F. F is 0 or 1.
+%name U //:same mean the "%name U 1". default blocking
+//example
+%xyz https://aaaa/xyz.png //:blocking
+%aaa https://aaaa/aaa.png 0 //:non-blocking
+
+X00 0 0 0 20 20 #f26
+IMG %xyz X00
+
+```
