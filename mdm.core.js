@@ -33,6 +33,49 @@
  root.mdm=mdm;
 })(this);
 
+//mdm.md
+;(function(mdm){
+ //areas
+ mdm.md.readblock=0
+ mdm.md.keyblock=0
+ mdm.md.fps=20
+ mdm.md.lps=200
+ mdm.md.imax=Number.MAX_SAFE_INTEGER - (Number.MAX_SAFE_INTEGER%10)
+ ;
+ mdm.md.f=0
+ mdm.md.l=0
+ mdm.md.cf=void 0 //clear interval fps
+ mdm.md.cl=void 0 //clear interval lps
+ ;
+ mdm.md.jumpstack=[] //
+ mdm.md.jumps={}
+ mdm.md.macros={}
+ mdm.md.n=0 //now line 
+})(mdm);
+
+//mdm.is re
+;(function(mdm){
+ ;
+ mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\}))|([^ ]+)/g
+ mdm.re.wraptrim=/(^\/\*)|(^\{\{\{)|(^\[\[\[)/ // /* ?
+ ;
+ mdm.is.madamvalue=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]$/.test(d)} 
+ mdm.is.wrapjs=(d)=>{return /^\{\{\{/.test(d)}
+ mdm.is.wrapstring=(d)=>{return /^\[\[\[/.test(d)}
+ mdm.is.madamvalueline=(d)=>{return /^\$[\$0-9A-Z][\$0-9A-Z]/.test(d)}
+ //? ! = < > + - %
+ mdm.is.mathhand=(d)=>{return /[\?\!\=\>\<\+\-\%]/.test(d)}
+ mdm.is.mathcompare=(d)=>{return /[\=\>\<]/.test(d)}
+ mdm.is.mathexist=(d)=>{return /[\?\!]/.test(d)}
+ mdm.is.math=(d)=>{return /[\+\-\%]/.test(d)}
+ //let is=is||{}
+ mdm.is.layer=(d)=>/X0[0-9]/.test(d)
+ mdm.is.X00=(d)=>(d==='X00')
+ mdm.is.function = function(obj){return toString.call(obj) === '[object Function]'}
+ mdm.is.array = Array.isArray || function(obj){return toString.call(obj) === '[object Array]'}
+ mdm.is.keyflg=(d)=>/^\$\$[01]/.test(d)
+ 
+})(mdm);
 
 //mdm.css values
 ;(function(mdm){
@@ -99,6 +142,40 @@ background-size: cover;
  fn.dde=(on,fn,cap)=>document.documentElement.addEventListener(on,fn,cap)
  
 })(mdm.fn);
+
+//mdm.fn safetick get4 flip trimwrap trimwrap2 f
+;(function(mdm){
+ mdm.fn.safetick=(d)=>{return (d===mdm.md.imax)?1:(++d)}
+ mdm.fn.get4=(d)=>d.charAt(3) //MTH ch tar add jmp 
+ mdm.fn.flip=function arrayFlip(trans) {
+  var key;
+  var tmpArr = {};
+  for(key in trans) {
+   if(trans.hasOwnProperty(key)) {
+    tmpArr[trans[key]] = key;
+   }
+  }
+  return tmpArr;
+ }
+ mdm.fn.trimwrap=(str)=>{
+  let re=mdm.re
+  ,x=str.trim()
+  if(re.wraptrim.test(x)){
+   let ary=x.split('\n')
+   ary.pop();ary.shift()
+   return ary.join('\n')
+  }
+  //silent pattern
+  return str;
+ }
+ mdm.fn.trimwrap2=(str)=>{return str.slice(3,-3) /*line wrap*/}
+ mdm.fn.f=(obj,t)=>{
+  if(!t)return obj//str
+  if(t==='q')return mdm.fn.q(obj).textContent//document.querySelector(obj).textContent
+ }
+ ; 
+})(mdm);
+
 
 ;(function(root){
  //coded the mdm.def, mdm.cmd, mdm.man 
