@@ -20,6 +20,7 @@ v0.092 coded one wrap
 v0.093 coded END abort command
 >>>>>>>v0.099 man command check.
 v0.100 wrap call <--- mile stone.
+v0.101 set back jump. $00=100 >>> $01 1 >>>
 v0.110 touch gesture with hummer.js <--- mile stone. 
 v0.120 preload call <--- mile stone.
 v0.130 YON SEL make <--- mile stone.
