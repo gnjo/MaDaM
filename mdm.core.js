@@ -83,7 +83,7 @@ background-size: cover;
  ;
  fn.i3=i3
  fn.fr=fr
- fn.cfr=(s,doc=document)=>{return doc.createDocumentFragment()}
+ fn.cfr=(doc=document)=>{return doc.createDocumentFragment()}
  fn.empty=(el)=>{while( el.firstChild ){el.removeChild( el.firstChild )} return el} 
  fn.g=(s,doc=document)=>{return doc.getElementById(s)};
  fn.gc=(s,doc=document)=>{return doc.getElementsByClassName(s)}
