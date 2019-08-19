@@ -10,24 +10,25 @@ v0.060 coded the key-ing. KEY KLR $$0 $$1
 v0.070 coded >>> XXX
 v0.071 coded >>> call for back
 v0.072 coded <<< MRK
-v0.080 coded address jump <--- mile stone. 20190818 
+v0.080 coded address jump <-------------------- mile stone. 20190818 
 v0.081 coded refactor lex to mdm.core.js
 v0.082 coded MTH for math hand.
 v0.083 coded SET for math hand.
-v0.090 coded math hand <--- mile stone. 20190819
+v0.090 coded math hand <----------------------- mile stone. 20190819
 v0.091 coded multi wrap [[[ ]]]] {{{ }}}}
 v0.092 coded one wrap
 v0.093 coded END abort command
 v0.094 coded CNT fps count for modulo.
->>>>>>>v0.099 man command check.
-v0.100 wrap call <--- mile stone.
-v0.101 set back jump. $00=100 >>> $01 1 >>>
-v0.110 touch gesture with hummer.js <--- mile stone. 
-v0.120 preload call <--- mile stone.
-v0.130 YON SEL make <--- mile stone.
+v0.099 coded man command check.
+v0.100 coded wrap call <---------------------- mile stone. 20190819
+v0.101 coded set back jump. $00=100 >>> $01 1 >>>
+>>>>>>>v0.101 coding...
+v0.110 touch gesture with hummer.js <--------- mile stone. 
+v0.120 preload call <------------------------- mile stone.
+v0.130 YON SEL make <------------------------- mile stone.
 v0.200 write the demo the opning window on MaDaM. <--- mile stone.
 v0.300 write the demo thetetris on MaDaM. <--- mile stone.
-v1.000 build up. first pack mdm.js <--- mile stone.
+v1.000 build up. first pack mdm.js <---------- mile stone.
 ```
 ```
 //build hint.
