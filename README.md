@@ -1,16 +1,29 @@
 ### MaDaM
 ```
 //history
-v0.001 draft
-v0.002 coded the mdm.core.js
-v0.003 coded the drawing. X00-X09 CLR TXT IMG COO
-v0.004 coded the parent board XXX
-v0.005 coded the sleep. SLP
-v0.006 coded the key-ing. KEY KLR $$0 $$1
-v0.007 coded >>> 
-v0.010 coded address jump <--- mile stone. 20190818 
-v0.011 coding lex to mdm.core.js
-v0.020 math hand <--- mile stone.
+v0.010 draft
+v0.020 coded the mdm.core.js
+v0.030 coded the drawing. X00-X09 CLR TXT IMG COO
+v0.040 coded the parent board XXX
+v0.050 coded the sleep. SLP
+v0.060 coded the key-ing. KEY KLR $$0 $$1
+v0.070 coded >>> XXX
+v0.071 coded >>> call for back
+v0.072 coded <<< MRK
+v0.080 coded address jump <--- mile stone. 20190818 
+v0.081 coded refactor lex to mdm.core.js
+v0.082 coded MTH for math hand.
+v0.083 coded SET for math hand.
+v0.090 coded math hand <--- mile stone. 20190819
+v0.091 coded multi wrap [[[ ]]]] {{{ }}}}
+v0.092 coding one wrap
+v0.100 wrap call <--- mile stone.
+v0.110 touch gesture with hummer.js <--- mile stone. 
+v0.120 preload call <--- mile stone.
+v0.130 YON SEL make <--- mile stone.
+
+v0.200 write the tetris on MaDaM <-- mile stone.
+v1.000 <--- build up mile stone.
 ```
 ```
 //build hint.
