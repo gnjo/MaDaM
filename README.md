@@ -22,8 +22,10 @@ v0.110 touch gesture with hummer.js <--- mile stone.
 v0.120 preload call <--- mile stone.
 v0.130 YON SEL make <--- mile stone.
 
-v0.200 write the tetris on MaDaM <-- mile stone.
-v1.000 <--- build up mile stone.
+v0.200 write the demo the opning window on MaDaM. <--- mile stone.
+v0.300 write the demo thetetris on MaDaM. <--- mile stone.
+
+v1.000 build up. first pack mdm.js <--- mile stone.
 ```
 ```
 //build hint.
