@@ -50,7 +50,7 @@ script(src="https://gnjo.github.io/MaDaM/mdm.js")
 ```js
 let macro=`
 @xyz
-X00 0 0 0 60 48 #000
+X00 0 0 0 30 24 #000
 MIM FOO TXT //:mime FOO same command the TXT
 <<< #0
 [[[
@@ -58,20 +58,27 @@ hello,MaDaM
 count %$11
 ]]]
 $22 $00
-FOO $22 X00
+TXT $22 X00
 $11+1
 $11=100 #1 //count limit jump
+SLP 2 fps
 >>> #0
 
 <<< #1
-TXT countmax X00
+[[[
+countmax
+goodbye
+]]]
+TXT $00 X00
+IMG #2cc
 >>> #2
 
 MRK #2 //end
-SLP 40
+SLP 40 fps
 CLR
 END end 
 `
+;
 let fps=20,lps=200
 mdm.run(macro,fps,lps)
 ```
