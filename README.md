@@ -17,6 +17,7 @@ v0.083 coded SET for math hand.
 v0.090 coded math hand <--- mile stone. 20190819
 v0.091 coded multi wrap [[[ ]]]] {{{ }}}}
 v0.092 coding one wrap
+v0.099 coding man command help
 v0.100 wrap call <--- mile stone.
 v0.110 touch gesture with hummer.js <--- mile stone. 
 v0.120 preload call <--- mile stone.
