@@ -35,32 +35,33 @@
 
 //document element utility
 ;(function(fn){
- fn.i3=(d,doc=document)=>{
+ ;
+ function i3(d,doc=document){
   if(typeof d !=='string') return d
   var el=doc.createElement('table'); el.innerHTML=d.trim();
   var me=el.childNodes[0]
   el=void 0;
   return me
  }
- fn.empty=(el)=>{
-   while( el.firstChild ){el.removeChild( el.firstChild )}
-   return el
+ function fr(html='',doc=document){
+  let flg = (typeof 'html' === 'string')
+  ,e= (flg)?doc.createElement('table'): html||doc.createElement('table')
+  ,fr=doc.createDocumentFragment()
+  ;
+  if(flg) e.innerHTML= html||'';
+  ;[].slice.call(e.childNodes).forEach(d=>fr.appendChild(d))
+  return fr;
  }
-fn.fr=function(html='',doc=document){
- let flg = (typeof 'html' === 'string')
- ,e= (flg)?doc.createElement('table'): html||doc.createElement('table')
- ,fr=doc.createDocumentFragment()
  ;
- if(flg) e.innerHTML= html||'';
- ;[].slice.call(e.childNodes).forEach(d=>fr.appendChild(d))
- return fr;
-} 
+ fn.i3=i3
+ fn.fr=fr
+ fn.empty=(el)=>{while( el.firstChild ){el.removeChild( el.firstChild )} return el} 
  fn.g=(s,doc=document)=>{return doc.getElementById(s)};
  fn.gc=(s,doc=document)=>{return doc.getElementsByClassName(s)}
  fn.q=(s,doc=document)=>{return doc.querySelector(s)};
  fn.qa=(s,doc=document)=>{return [].slice.call(doc.querySelectorAll(s))}
- fn.r=(d=>d.parentNode.removeChild(d))
- fn.ce=(d,doc=document)=>{return doc.createElement(d)}) 
+ fn.r=(d)=>{return d.parentNode.removeChild(d)}
+ fn.ce=(d,doc=document)=>{return doc.createElement(d)}
  fn.a2=function(me,p){p.appendChild(me);return me}
  fn.p2=function(me,p){p.insertBefore(me,p.firstElementChild/*p.firstChild*/); return me}
  fn.as2=function(me,p){p.parentNode.insertBefore(me,p.nextElementSibling/*nextSibling*/);return me}
