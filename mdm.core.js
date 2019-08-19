@@ -34,7 +34,7 @@
 })(this);
 
 //document element utility
-;(function(mdm.fn){
+;(function(fn){
  fn.i3=(d,doc=document)=>{
   if(typeof d !=='string') return d
   var el=doc.createElement('table'); el.innerHTML=d.trim();
