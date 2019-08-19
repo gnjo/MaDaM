@@ -5,15 +5,14 @@
 //v4 coded functions
 ;(function(root){
  let mdm=root.mdm||{}
-
+ ;
  mdm.sd=mdm.sd||{} //.xxx //macro valiable set here. like a savedata.
  mdm.db=mdm.db||{} //.xxx //macro const data set here. like a database.
  mdm.md=mdm.md||{} //.xxx //madam system valiable set here. fps, lps, looptick, like a madam-data.
  mdm.fn=mdm.fn||{} //.xxx //useful functions
  mdm.is=mdm.is||{} //.xxx //is check
  mdm.re=mdm.re||{} //.xxx //regex
-
- //core function stab
+ ;//core function stab
  mdm.def=void 0 //command definition
  mdm.cmd=void 0 //command call return value the $00
  mdm.man=void 0 //command help
@@ -23,14 +22,14 @@
  mdm.elm=void 0 //element setting on run()
  mdm.key=void 0 //key setting on run()
  mdm.mid=void 0 //mid setting on run(). futured ...
-
+ ;
  mdm.fop=void 0 //frameloop. if call, draw layers.
  mdm.lop=void 0 //lineloop. if call, next cmdline.
-
+ ;
  mdm.red=void 0 //commandline reader, do the mdm.cmd() 
  mdm.run=void 0 //only outer function. mdm.run(macrostring,fps,lps)
-
- root.mdm=mdm;
+ ;
+ root.mdm=mdm
 })(this);
 
 //mdm.md
