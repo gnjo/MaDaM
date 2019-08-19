@@ -338,3 +338,8 @@ X00 0 0 0 20 20 #f26
 IMG %xyz X00
 
 ```
+# outer END abort command
+```
+//stop the mdm.lop mdm.fop
+END C //:if macro end or strong escape, call the END. if exist C, call the console.log(C).
+```
