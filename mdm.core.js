@@ -95,6 +95,9 @@ background-size: cover;
  fn.p2=function(me,p){p.insertBefore(me,p.firstElementChild/*p.firstChild*/); return me}
  fn.as2=function(me,p){p.parentNode.insertBefore(me,p.nextElementSibling/*nextSibling*/);return me}
  fn.ps2=function(me,p){p.parentNode.insertBefore(me,p);return me}
+ ;
+ fn.dde=(on,fn,cap)=>document.documentElement.addEventListener(on,fn,cap)
+ 
 })(mdm.fn);
 
 ;(function(root){
@@ -245,3 +248,88 @@ background-size: cover;
 
  //root.mdm=mdm;
 })(mdm);
+
+//core function css elm key mid fop lop
+;(function(mdm){
+ //css setting
+ mdm.css=()=>{
+  let el=mdm.fn.i3(`<style class="${mdm.md.styleclass}">${mdm.md.css}</style>`)
+  ,head=mdm.fn.q('head')
+  ;
+  mdm.fn.a2(el,head)
+  ;
+  return mdm
+ }
+
+ //element setting
+ mdm.elm=()=>{  
+  mdm.md.baselayer='layer'
+  mdm.md.layernames="XXX,X00,X01,X02,X03,X04,X05,X06,X07,X08,X09".split(',') //X00...X09 on the XXX 
+  mdm.md.layers=mdm.fn.gc(mdm.md.baselayer)
+  mdm.md.baselayerquery='body'
+  ;
+  let fn=mdm.fn
+  if(fn.q('.X00'))return console.log('double load')
+  ;  
+  let fr=fn.cfr(),xxx=void 0
+  ;
+  mdm.md.layernames.map(d=>{
+   let el=fn.i3(`<div class="${mdm.md.baselayer} ${d}"></div>`)
+   ,parent=(xxx)?xxx:fr
+   fn.a2(el,parent)
+   if(d==='XXX') xxx=el
+   ;//X00...X09
+   mdm.sd[d]={}
+   mdm.sd[d].style={}
+   mdm.sd[d].flg=1
+   ;
+  })
+  fn.a2(fr,fn.q(mdm.md.baselayerquery))
+  
+  //console.log(mdm.md.layers)
+  return mdm;
+ }
+
+ //key setting
+ mdm.key=()=>{
+  mdm.fn.dde('keydown',(e)=>{
+   if(mdm.md.keyblock)return;
+   if(!(mdm.sd["$$0"]===e.which)) mdm.sd["$$1"]=mdm.sd["$$0"];
+   mdm.sd["$$0"]=e.which
+  })
+  return mdm;
+ }
+
+ //sound setting. to be futured...
+ mdm.mid=()=>{
+  return mdm;
+ }
+
+ //frameloop on fps
+ mdm.fop=(i)=>{
+  //console.log(i)
+  Array.from(mdm.md.layers).map(x=>{
+   let el=x,d=el.className.replace('layer','').trim()
+   if(!mdm.sd[d].flg)return;
+   mdm.sd[d].flg=0//update complete;
+   if(!(d==="XXX"))Object.assign(el,mdm.sd[d])   
+   Object.assign(el.style,mdm.sd[d].style)
+  })
+ }
+ //lineloop on lps
+ mdm.lop=(i)=>{
+  if(mdm.md.readblock)return;
+  let a=mdm.fn.addr(mdm.sd['$$$']).set(mdm.md.n)
+  ,cmdline=mdm.md.macros[a.get('@')][a.get('n')]||''
+  ;
+  if(cmdline){
+   mdm.sd['$$$']=a.get() //main+sub+':'+n
+   mdm.red(cmdline) //read the macro on the lineloop
+  }
+  mdm.md.n+=1;
+ } 
+ 
+})(mdm);
+
+
+
