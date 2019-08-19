@@ -18,6 +18,7 @@ v0.090 coded math hand <--- mile stone. 20190819
 v0.091 coded multi wrap [[[ ]]]] {{{ }}}}
 v0.092 coded one wrap
 v0.093 coded END abort command
+v0.094 coded CNT fps count for modulo.
 >>>>>>>v0.099 man command check.
 v0.100 wrap call <--- mile stone.
 v0.101 set back jump. $00=100 >>> $01 1 >>>
@@ -153,6 +154,8 @@ SLP T ms//:read blocking, key blocking, while the T ms.
 SLP T //:same mean the "SLP T ms"
 SLP F fps //:order the F flame 
 
+//count
+CNT //:fps count for modulo. if fps 20, 0...19...0...19 the looped.
 ```
 
 ```
