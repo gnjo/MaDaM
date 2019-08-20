@@ -5,12 +5,9 @@ v1 draft
 ```
 ```
 //decide the addon loadtiming and call method.
-mdm.add(loadtiming,name,fn)
+mdm.add(timingweight,name,fn)
 ;
 mdm.add(void 0,n,f) //not load call.
-mdm.add(0,n,f) //initialize before the run.
-mdm.add(1,n,f) //initialize on run, before the loop. if dom control, choice the here.
-mdm.add(2,n,f) //initialize after the run. same mean after the loop.
 ;
 
 mdm.run=(str,fps,lps)=>{
@@ -24,4 +21,20 @@ mdm.loop(fps,lps); //macro start
 if mdm.run(), option nothing, call the mdm.try();
 mdm.try();//show the run sequence.
 
+```
+### define timing weight
+```
+000 mdm.add
+000 mdm.def
+001 mdm.cmd
+...
+100 mdm.lex
+...
+199 mdm.try
+200 mdm.run
+//on run()
+...
+300 mdm.loop
+...
+//tail run()
 ```
