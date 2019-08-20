@@ -40,9 +40,10 @@ mdm.fn.dde('keydown',(e)=>{
   if(!type)return
   if(!which)return
   ;
+  which=parseInt(which); //bug fix which is number
   if(!(mdm.sd["$$0"]===which)) mdm.sd["$$1"]=mdm.sd["$$0"];
   mdm.sd["$$0"]=which
-  console.log(mdm.sd["$$0"])
+  //console.log(mdm.sd["$$0"])
   if(mdm.md.readblock)mdm.md.readblock=0;
  });
 } 
