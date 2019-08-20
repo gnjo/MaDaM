@@ -28,7 +28,7 @@ $KL 37 //arrow left
 $KR 39 //arrow right
 
 //tap binding to key
-TAP d $KU //:if down the swip, then down same the key $KU.
+TAP d $KU //:if down the swip, then same the key $KU.
 TAP u $KD //:up the swip
 TAP r $KR //:right the swip
 TAP l $KL //:tap the left
