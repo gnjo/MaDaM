@@ -5,7 +5,7 @@ v1 draft
 ```
 ```
 //key and tap binding
-TAP K T //:K is keycode, T is same mean option d u r l t tt. t is tap, tt is taptap.
+TAP T K //:T is same mean option d u r l t tt. t is tap, tt is taptap. K is bind the keycode.
 TAP tt $KA //:taptap same mean $KA
 ```
 
