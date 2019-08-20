@@ -3,6 +3,7 @@
 //v2 coded the mdm.def mdm.cmd mdm.man
 //v3 coded mdm.lex
 //v4 coded functions
+//v5 bugfix lex trim()
 ;(function(root){
  let mdm=root.mdm||{}
  ;
@@ -329,9 +330,10 @@ background-size: cover;
   ,ary=(line)?text.split('\n'):(addr.get('@#')+'\n'+text).split('\n')
   ,jumps={}
   ,wk=void 0
-  ,f=(d)=>d.replace(re.tailcomment,'').trim()
-  ,f2=(d,i)=>{
+  ,f=(d)=>d.replace(re.tailcomment,'')//.trim() //bugfix: trim() to f2
+  ,f2=(_d,i)=>{
    //address replace
+   let d=_d.trim() //bugfix: trim() to f2
    if(re.escapeaddress.test(d))return d;
    let supply=addr.get('@#')
    let to=mdm.fn.addr(supply).set(d).get('@#')
