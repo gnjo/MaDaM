@@ -22,7 +22,7 @@ if mdm.run(), option nothing, call the mdm.try();
 mdm.try();//show the run sequence.
 
 ```
-~~### define timing weight
+~~### define timing weight~~
 ```
 000 mdm.add
 000 mdm.def
