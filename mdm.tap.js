@@ -5,8 +5,8 @@
 //mdm.md={}
 //mdm.sd={}
 mdm.md.tap={}
-mdm.md.tap['t']=13
-mdm.md.keywaiting=0;
+//mdm.md.tap['t']=13
+//mdm.md.keywaiting=0;
 mdm.tap=()=>{
  if(!Hammer)return mdm
  ;
