@@ -15,7 +15,8 @@ TAP tt $KA //:taptap same mean $KA
 script(src="https://gnjo.github.io/MaDaM/hammer.js")
 script(src="https://gnjo.github.io/MaDaM/mdm.js")
 ```
-```
+```js
+let m=`
 @example
 MRK #keybind
 $KS 13 //enter key
@@ -48,5 +49,6 @@ X00 0 0 0 20 10 #456
 KEY *
 TXT $$0
 >>> #1
-
+`
+;mdm.run(m)
 ```
