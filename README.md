@@ -23,9 +23,10 @@ v0.099 coded man command check.
 v0.100 coded wrap call <---------------------- mile stone. 20190819
 v0.101 coded set back jump. $00=100 >>> $01 1 >>>
 v0.101 bugfx mdm.lex() string trim issue.
-v0.105 key binding for controler. ABXYLR aU aD aL aR S P. S is start. P is pause.
-v0.110 write the demo select loop. <--------- mile stone. 
-v0.120 touch gesture with hummer.js <--------- mile stone.
+v0.105 coded key binding for tap. 
+v0.110 coded write the select loop. <--------- mile stone. 20190820 
+v0.120 coded tapbind with hammer.js <--------- mile stone. 20190820
+>>>>>>>v0.121 coding...
 v0.130 preload call <------------------------- mile stone.
 v0.140 YON SEL make <------------------------- mile stone.
 v0.200 write the demo the opning window on MaDaM. <--- mile stone.
