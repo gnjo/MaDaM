@@ -310,8 +310,11 @@ mdm.def('SLP',(frame)=>{
 ```
 ### inner jump and macro set
 ```
-mdm.jmp(mdm.sd['$$$'])//read change and macro start. @main#sub:line or @main#sub or @main or @main:line 
-mdm.is.jump(mdm.sd['$$$'])
+coding... mdm.jmp(mdm.sd['$$$'])//read change and macro start. @main#sub:line or @main#sub or @main or @main:line 
+coding... mdm.is.jump(mdm.sd['$$$'])
+mdm.mac(macro,flg) //coded 
+//mdm.mac(str,1) //jump to macro head
+//mdm.mac(str,0) //macro read only. not jump.
 ```
 
 ### idea A00...AZZ map order. B00..BZZ blink cursor order.
