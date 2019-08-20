@@ -16,8 +16,8 @@ script(src="https://gnjo.github.io/MaDaM/hammer.js")
 script(src="https://gnjo.github.io/MaDaM/mdm.js")
 ```
 ```
-//example
-//key binding
+@example
+MRK #keybind
 $KS 13 //enter key
 //$$0=$KS #1//if enter jump to #1
 $KA 65 //A 
@@ -40,4 +40,13 @@ TAP r $KR //:right the swip
 TAP l $KL //:tap the left
 TAP t $KA //:tap the tap
 TAP tt $KX //:tap the tap-tap 
+
+MRK #display
+X00 0 0 0 20 10 #456
+
+<<< #1
+KEY *
+TXT $$0
+>>> #1
+
 ```
