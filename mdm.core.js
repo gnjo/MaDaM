@@ -99,7 +99,8 @@ background-size: cover;
  mdm.re.tailcomment=/(^\s*\/\/.*|\s*[^:]\/\/.*)/
  mdm.re.address=/^@/
  mdm.re.addressfill=/(#.+)/
- mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{/
+ //mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{/
+ mdm.re.escapeaddress=/^X|^TXT|^COO|^IMG|^\[\[\[|^\{\{\{|>>>(?:.*?)>>>/
  mdm.re.ad=/^(@.*)|\n(@.*)/ 
  ;
  //mdm.re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\}))|([^ ]+)/g
