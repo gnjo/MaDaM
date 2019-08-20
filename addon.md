@@ -21,4 +21,7 @@ mdm.loop(fps,lps); //macro start
 //2 after the run
 }
 
+if mdm.run(), option nothing, call the mdm.try();
+mdm.try();//show the run sequence.
+
 ```
