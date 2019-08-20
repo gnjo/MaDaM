@@ -247,7 +247,7 @@ $$0=A >>> $$1=B #1 >>> //A pressed B
 $$0=B >>> $$1=A #1 >>> //A pressed B
 //key meaning
 $KS 13 //enter key
-$$0=$KS #1//if enter jump to #1
+//$$0=$KS #1//if enter jump to #1
 $KA 65 //A 
 $KB 66 //B
 $KY 89 //Y
