@@ -26,7 +26,7 @@ v0.101 bugfx mdm.lex() string trim issue.
 v0.105 coded key binding for tap. 
 v0.110 coded write the select loop. <--------- mile stone. 20190820 
 v0.120 coded tapbind with hammer.js <--------- mile stone. 20190820
-v0.121 bugfix set buck issue on lex.  
+v0.121 bugfx set buck issue on lex.  
 v0.122 bugfx tapbind issue on tap.
 >>>>>>>v0.123 coding
 v0.130 preload call <------------------------- mile stone.
