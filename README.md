@@ -310,7 +310,8 @@ mdm.def('SLP',(frame)=>{
 ```
 ### inner jump and macro set
 ```
-coding... mdm.jmp(mdm.sd['$$$'])//read change and macro start. @main#sub:line or @main#sub or @main or @main:line 
+coding... mdm.jmp(mdm.sd['$$$'])//read change and macro start. 
+//@main#sub:line or @main#sub or @main or @main:line 
 coding... mdm.is.jump(mdm.sd['$$$'])
 mdm.mac(macro,flg) //coded 
 //mdm.mac(str,1) //jump to macro head
