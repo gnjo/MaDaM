@@ -8,7 +8,13 @@ v1 draft
 TAP T K //:T is same mean option d u r l t tt. t is tap, tt is taptap. K is bind the keycode.
 TAP tt $KA //:taptap same mean $KA
 ```
-
+### example
+```js
+//need hummer.js
+//pug
+script(src="https://gnjo.github.io/MaDaM/hummer.js")
+script(src="https://gnjo.github.io/MaDaM/mdm.js")
+```
 ```
 //example
 //key binding
