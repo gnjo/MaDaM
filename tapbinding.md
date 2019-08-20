@@ -10,9 +10,9 @@ TAP tt $KA //:taptap same mean $KA
 ```
 ### example
 ```js
-//need hummer.js
+//need hammer.js
 //pug
-script(src="https://gnjo.github.io/MaDaM/hummer.js")
+script(src="https://gnjo.github.io/MaDaM/hammer.js")
 script(src="https://gnjo.github.io/MaDaM/mdm.js")
 ```
 ```
