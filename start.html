@@ -40,7 +40,7 @@ fn.base64=(str,decodeflg)=>{
  ,e=(str)=>btoa(unescape(encodeURIComponent(str)))
  return (decodeflg)?d(str):e(str)
 }  
-  let d=fn.gp('d')
+  let d=fn.gp('d',location.href)
   if(d) mdm.run( fn.base64(d,1) )
 })(mdm); 
  
