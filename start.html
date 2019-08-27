@@ -1,0 +1,32 @@
+<body>
+<script src="https://gnjo.github.io/MaDaM/hammer.js"></script>
+<script src="https://gnjo.github.io/MaDaM/mdm.core.js?v=8"></script>
+<script src="https://gnjo.github.io/MaDaM/mdm.tap.js?v=2"></script>
+<script src="https://codepen.io/gnjo/pen/GRKjgxw.js?v=103"></script>
+<script class="macro" type="text/plain"></script>
+<script class="runner">
+;(function(mdm){ 
+ let fn={}
+ fn.updateDom=function(el,caller,time,flg){
+  let target=el
+  ,_caller=caller//_.debounce(caller,time||70) //special
+  ,def={childList:true}
+  ,config=(flg)?Object.assign({},def,{subtree:true}) :def
+  ,calc=(ev)=>{_caller(ev) }
+  ,ob=new MutationObserver(mu=>{ mu.map(calc)})
+  ob.observe(target,config)
+  ;
+  return ob;
+ }
+ fn.ud=fn.changeDom=fn.updateDom
+ fn.q=(d)=>document.querySelector(d)
+ ;
+ fn.ud(fn.q('script.macro'),(ev)=>{
+  mdm.cmd('END')
+  let text=ev.target.textContent
+  if(text.length>0) mdm.run(text)
+ })
+
+})(mdm); 
+</script>
+</body>
