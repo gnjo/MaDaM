@@ -44,6 +44,9 @@ mdm.js
  mdm.run.js
  mdm.lex.js
 ```
+### dev
+https://codepen.io/gnjo/pen/GRKjgxw
+
 ### outer quick
 ```
 //pug
