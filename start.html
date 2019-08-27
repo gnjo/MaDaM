@@ -23,6 +23,7 @@ fn.base64=(str,decodeflg)=>{
  return (decodeflg)?d(str):e(str)
 }  
   let d=fn.gp('d',location.href)
+  console.log(d)
   if(d) mdm.run( fn.base64(d,1) )
 })(mdm); 
  
