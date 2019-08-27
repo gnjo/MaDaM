@@ -6,6 +6,7 @@
 <script class="runner">
 ;(function(mdm){ 
  let fn={}
+ /*
  fn.updateDom=function(el,caller,time,flg){
   let target=el
   ,_caller=caller//_.debounce(caller,time||70) //special
@@ -25,6 +26,24 @@
   let text=ev.target.textContent
   if(text.length>0) mdm.run(text)
  })
-
+*/
+  fn.getparam=(key,url)=>{
+   let re=new RegExp('^'+key+'=')
+   return url.split('?').pop().split('&').filter(d=>re.test(d)).join('').split('=').pop()
+   /*usage
+  console.log(fn.getparam('id',url))   
+   */
+  }
+  fn.gp=fn.getParam=fn.getparam;
+fn.base64=(str,decodeflg)=>{
+ let d=(str)=>decodeURIComponent(escape(atob(str)))
+ ,e=(str)=>btoa(unescape(encodeURIComponent(str)))
+ return (decodeflg)?d(str):e(str)
+}  
+  let d=fn.gp('d')
+  if(d) mdm.run( fn.base64(d,1) )
 })(mdm); 
+ 
+ 
+ 
 </script>
