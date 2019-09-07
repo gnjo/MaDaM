@@ -446,5 +446,118 @@ background-size: cover;
  
 })(mdm);
 
+//mdm core. red mac run
+;(function(mdm){
+ //read the macro on the lineloop
+ 
+ //
+ //
+ mdm.red=(_str)=>{
+  if(!_str)return;
+  //mdm.md.readblock=1;
+  let str=_str
+  ,cmd=str.slice(0,3)//str.split(' ').slice(0,1).pop()
+  ,ary=str.slice(4).match(mdm.re.cmdlinesplit)||[] //str.split(' ').slice(1)
+  ;
+  //wrap case quick return
+  if(mdm.is.wrapjs(str)&&(mdm.md.cmds['{{{'])){
+   mdm.cmd('{{{',[mdm.fn.trimwrap(str)])
+   return;
+  }
+  if(mdm.is.wrapstring(str)&&(mdm.md.cmds['[[['])){
+   //console.log('before',str)
+   //console.log('after',mdm.fn.trimwrap(str))
+   mdm.cmd('[[[',[mdm.fn.trimwrap(str)])
+   return;
+  }
+  //do the oneline
+  ary=ary.map(d=>{ 
+   if(mdm.is.wrapstring(d)&&(mdm.md.cmds['[[['])){
+    let a= mdm.cmd('[[[',[mdm.fn.trimwrap2(d)])
+    return mdm.sd['$00']
+   }
+   if(mdm.is.wrapjs(d)&&(mdm.md.cmds['{{{'])){
+    mdm.cmd('{{{',[mdm.fn.trimwrap2(d)])
+    return mdm.sd['$00']
+   }
+   return d;
+  })
+
+  //layer case X00...X09
+  if(mdm.is.layer(cmd)&&(mdm.md.cmds['LAY'])){
+   ary.unshift(cmd)
+   mdm.cmd('LAY',ary)
+   return;   
+  }
+  //madamvalue case $00...$XX
+  if(mdm.is.madamvalueline(str)){
+   let ch=mdm.fn.get4(str)
+   if(!(ch===' '))ary.unshift(ch)
+   ary.unshift(cmd)
+   //set case
+   if(ch===' '||mdm.is.madamvalue(str)){ //mdm.is.madamvalue(str) is reset case.
+    cmd='SET'
+    //ary=str.split(' ')
+   }
+   if(mdm.is.mathhand(ch)){
+    //ary.unshift(cmd)//let mathcmdline=str.replace(ch,' '+ch+' ')
+    cmd='MTH'
+    //ary=mathcmdline.split(' ')
+   }
+   if(mdm.md.cmds[cmd]) mdm.cmd(cmd,ary)
+   return;
+  }
+
+  //other command case
+  //console.log(mdm.md.cmds,mdm.md.cmds[cmd],cmd,ary)
+  if(mdm.md.cmds[cmd]) mdm.cmd(cmd,ary)
+  return;
+  //mdm.md.readblock=0;
+ }
+
+ //macro read
+ mdm.mac=(str,moveflg)=>{
+ 
+  let flg=(moveflg)?1:0
+  ,ret=mdm.lex(str) //macro lex
+  ,a=mdm.fn.addr(ret.addr)
+  ,at=a.get('@')  
+  mdm.md.macros[at]=ret.data  
+  mdm.md.jumps=Object.assign({},mdm.md.jumps,ret.jumps)
+  //
+  //console.log(str); 
+  //console.log(ret.data.join('\n'))
+  //
+  if(flg){
+   //strong jump
+   mdm.md.n=mdm.md.jumps[a.get('@#')]
+   mdm.md.nowmacro=at
+   mdm.sd['$$$']=a.set(mdm.md.n).get() //ret.addr+':'+mdm.md.n//#xxxxx
+   //console.log(mdm.sd['$$$'],mdm.md.n)
+   //console.log(mdm.md.macros[at],mdm.md.n,mdm.md.nowmacro)
+  }
+  return mdm;
+ }
+
+ //sequence the inner
+ mdm.run=(str,fps,lps)=>{
+  mdm.css().elm().key().mid().mac(str,1)
+  ;
+  mdm.md.fps=fps||mdm.md.fps
+  mdm.md.lps=lps||mdm.md.lps
+  ;
+  mdm.md.cf=setInterval(()=>{ 
+   mdm.md.f=mdm.fn.safetick(mdm.md.f)
+   mdm.fop(mdm.md.f) //frameloop on fps
+  },1000/mdm.md.fps)
+  ;
+  mdm.md.lf=setInterval(()=>{
+   mdm.md.l=mdm.fn.safetick(mdm.md.l)
+   mdm.lop(mdm.md.l) //lineloop on lps 
+  },1000/mdm.md.lps)
+  //console.log(ret,mdm.md)
+ }
+
+})(mdm);
 
 
